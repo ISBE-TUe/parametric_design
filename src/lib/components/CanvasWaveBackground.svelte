@@ -6,18 +6,27 @@
   export let frequency = 3;
   export let speed = 4;
 
+  const BASE_W = 1400;
+  const BASE_H = 900;
+
   let canvasEl: HTMLCanvasElement | null = null;
   let ctx: CanvasRenderingContext2D | null = null;
   let raf = 0;
   let t = 0;
+  let dpr = 1;
 
   const rows = 24;
   const cols = 36;
 
-  const resize = () => {
+  const setupCanvas = () => {
     if (!canvasEl) return;
-    canvasEl.width = window.innerWidth;
-    canvasEl.height = window.innerHeight;
+    dpr = Math.min(window.devicePixelRatio || 1, 1.5);
+    canvasEl.width = BASE_W * dpr;
+    canvasEl.height = BASE_H * dpr;
+    canvasEl.style.width = '100vw';
+    canvasEl.style.height = '100vh';
+    ctx = canvasEl.getContext('2d');
+    if (ctx) ctx.scale(dpr, dpr);
   };
 
   const drawSmoothLine = (points: { x: number; y: number }[]) => {
@@ -39,13 +48,12 @@
 
   const draw = () => {
     if (!ctx || !canvasEl) return;
-    const { width, height } = canvasEl;
-    ctx.clearRect(0, 0, width, height);
+    ctx.clearRect(0, 0, BASE_W, BASE_H);
     ctx.lineWidth = 1.1;
     ctx.strokeStyle = 'rgba(148, 163, 184, 0.8)';
 
-    const spacingX = width / cols;
-    const spacingY = height / rows;
+    const spacingX = BASE_W / cols;
+    const spacingY = BASE_H / rows;
 
     const nodes: { x: number; y: number }[][] = [];
     for (let j = 0; j <= rows; j++) {
@@ -53,7 +61,7 @@
       for (let i = 0; i <= cols; i++) {
         const x = i * spacingX;
         const y0 = j * spacingY;
-        const dist = Math.hypot(x - width / 2, y0 - height / 2);
+        const dist = Math.hypot(x - BASE_W / 2, y0 - BASE_H / 2);
         const wave = Math.sin(dist * frequency * 0.01 - t) * amplitude * 10;
         row.push({ x, y: y0 + wave });
       }
@@ -85,15 +93,12 @@
   onMount(() => {
     if (!browser) return;
     if (!canvasEl) return;
-    ctx = canvasEl.getContext('2d');
-    resize();
+    setupCanvas();
     loop();
-    window.addEventListener('resize', resize);
   });
 
   onDestroy(() => {
     if (!browser) return;
-    window.removeEventListener('resize', resize);
     cancelAnimationFrame(raf);
   });
 </script>
