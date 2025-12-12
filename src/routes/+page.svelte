@@ -1,5 +1,9 @@
 <script lang="ts">
-  import { WaveGridBackground } from '$lib';
+  import { CanvasWaveBackground } from '$lib';
+
+  let amplitude = 6;
+  let frequency = 3;
+  let speed = 4;
 </script>
 
 <svelte:head>
@@ -7,7 +11,7 @@
 </svelte:head>
 
 <section class="relative min-h-screen overflow-hidden bg-white text-slate-900">
-  <WaveGridBackground amplitude={6} frequency={3} speed={4} />
+  <CanvasWaveBackground {amplitude} {frequency} {speed} />
 
   <div class="relative z-10 mx-auto flex min-h-screen max-w-5xl flex-col justify-center gap-10 px-6 py-16 sm:px-10">
     <div class="inline-flex max-w-max items-center gap-2 rounded-full bg-slate-900/90 px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-white">
@@ -32,8 +36,50 @@
         >Book a session</a
       >
       <span class="text-sm text-slate-700">
-        New explorations launch weekly · Realtime viewport background is fully GPU-free.
+        New explorations launch weekly · Realtime viewport background runs on canvas (no GPU driver needed).
       </span>
+    </div>
+
+    <div class="mt-6 grid w-full max-w-xl gap-4 rounded-2xl border border-slate-200 bg-white/70 p-4 shadow-sm backdrop-blur">
+      <div class="flex items-center justify-between gap-4">
+        <label class="text-sm font-semibold text-slate-800" for="amplitude">Amplitude</label>
+        <input
+          id="amplitude"
+          type="range"
+          min="1"
+          max="12"
+          step="0.5"
+          bind:value={amplitude}
+          class="w-full accent-slate-900"
+        />
+        <span class="w-12 text-right text-sm font-mono text-slate-700">{amplitude.toFixed(1)}</span>
+      </div>
+      <div class="flex items-center justify-between gap-4">
+        <label class="text-sm font-semibold text-slate-800" for="frequency">Frequency</label>
+        <input
+          id="frequency"
+          type="range"
+          min="1"
+          max="8"
+          step="0.5"
+          bind:value={frequency}
+          class="w-full accent-slate-900"
+        />
+        <span class="w-12 text-right text-sm font-mono text-slate-700">{frequency.toFixed(1)}</span>
+      </div>
+      <div class="flex items-center justify-between gap-4">
+        <label class="text-sm font-semibold text-slate-800" for="speed">Speed</label>
+        <input
+          id="speed"
+          type="range"
+          min="1"
+          max="10"
+          step="0.5"
+          bind:value={speed}
+          class="w-full accent-slate-900"
+        />
+        <span class="w-12 text-right text-sm font-mono text-slate-700">{speed.toFixed(1)}</span>
+      </div>
     </div>
   </div>
 </section>
