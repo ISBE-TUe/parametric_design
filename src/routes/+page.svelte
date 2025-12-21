@@ -13,28 +13,6 @@
 <section class="relative min-h-screen overflow-hidden bg-white text-slate-900">
   <CanvasWaveBackground {amplitude} {frequency} {speed} />
 
-  <nav class="absolute inset-x-0 top-0 z-20 px-6 py-5 sm:px-10">
-    <div class="flex items-center justify-between gap-6 rounded-full px-4 py-3">
-      <div class="flex items-center gap-3">
-        <div class="flex h-10 w-10 items-center justify-center rounded-full bg-slate-900 text-sm font-semibold uppercase text-white">
-          PD
-        </div>
-        <span class="text-lg font-semibold text-slate-900">Parametric Design</span>
-      </div>
-      <div class="flex items-center gap-6 text-sm font-medium text-slate-700">
-        <a class="transition hover:text-slate-900" href="#course">Course Content</a>
-        <a class="transition hover:text-slate-900" href="#assignments">Assignments</a>
-        <a class="transition hover:text-slate-900" href="#schedule">Schedule</a>
-        <div class="h-6 w-px bg-slate-200"></div>
-        <a
-          class="rounded-full bg-slate-900 px-4 py-2 text-xs font-semibold uppercase tracking-[0.1em] text-white shadow-sm transition hover:-translate-y-[1px] hover:shadow-md"
-          href="https://canvas.instructure.com/"
-          >Canvas</a
-        >
-      </div>
-    </div>
-  </nav>
-
   <div class="relative z-10 mx-auto flex min-h-screen max-w-5xl flex-col justify-center gap-12 px-6 py-20 sm:px-10">
     <div class="flex flex-col gap-8">
       <div class="flex flex-col items-start gap-6 sm:flex-row sm:items-center sm:justify-between">
@@ -96,7 +74,7 @@
       <div class="mt-6 overflow-hidden rounded-2xl border border-slate-200 bg-white/60 shadow-sm backdrop-blur">
         <div class="grid grid-cols-1 divide-y divide-slate-200 sm:grid-cols-3 sm:divide-y-0 sm:divide-x">
           <a
-            href="#course"
+            href="/content"
             class="group flex items-center justify-between px-6 py-8 sm:px-8"
           >
             <span class="text-xl font-semibold uppercase text-slate-900">Content</span>
