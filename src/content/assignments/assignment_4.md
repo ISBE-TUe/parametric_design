@@ -14,7 +14,7 @@ The assignment is inspired by recent developments within the Beethoven growth in
 
 The planned buildings can be seen in this image:
 
-![](https://assets.w3.tue.nl/w/fileadmin/_processed_/f/5/csm_20241126%20Cleanroom%20and%20Semicon%203_5594bba076.jpg)
+![Planned cleanroom and semiconductor facilities](https://assets.w3.tue.nl/w/fileadmin/_processed_/f/5/csm_20241126%20Cleanroom%20and%20Semicon%203_5594bba076.jpg)
 
 These articles should be used as contextual and conceptual references, not as strict design templates.
 

@@ -9,5 +9,5 @@ objectives:
   - Inspiration through precedent projects
 slidesUrl: /decks/week-01/index.html
 order: 1
-weekTitle: Week 1
+# weekTitle: Week 1
 ---

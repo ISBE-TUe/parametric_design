@@ -5,7 +5,7 @@ objectives:
   - Lists and trees
   - Data matching
   - Organizing inputs
-slidesUrl: /decks/week-02/
+# slidesUrl: /decks/week-02/
 order: 1
 weekTitle: Week 2
 ---

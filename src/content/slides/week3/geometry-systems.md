@@ -5,7 +5,7 @@ objectives:
   - Rule-based geometry
   - Parametric controls
   - Testing variations
-slidesUrl: /decks/week-03/
+# slidesUrl: /decks/week-03/
 order: 1
 weekTitle: Week 3
 ---

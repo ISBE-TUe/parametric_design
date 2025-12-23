@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { CanvasWaveBackground } from '$lib';
+	import { base } from '$app/paths';
 
 	let amplitude = 6;
 	let frequency = 3;
@@ -86,19 +87,19 @@
 				<div
 					class="grid grid-cols-1 divide-y divide-slate-200 sm:grid-cols-3 sm:divide-x sm:divide-y-0"
 				>
-					<a href="/slides" class="group flex items-center justify-between px-6 py-8 sm:px-8">
+          <a href={`${base}/slides`} class="group flex items-center justify-between px-6 py-8 sm:px-8">
 						<span class="text-xl font-semibold text-slate-900 uppercase">Slides</span>
 						<span class="text-2xl text-slate-800 transition-transform group-hover:translate-x-1"
 							>→</span
 						>
 					</a>
-					<a href="/assignments" class="group flex items-center justify-between px-6 py-8 sm:px-8">
+          <a href={`${base}/assignments`} class="group flex items-center justify-between px-6 py-8 sm:px-8">
 						<span class="text-xl font-semibold text-slate-900 uppercase">Assignments</span>
 						<span class="text-2xl text-slate-800 transition-transform group-hover:translate-x-1"
 							>→</span
 						>
 					</a>
-					<a href="/schedule" class="group flex items-center justify-between px-6 py-8 sm:px-8">
+          <a href={`${base}/schedule`} class="group flex items-center justify-between px-6 py-8 sm:px-8">
 						<span class="text-xl font-semibold text-slate-900 uppercase">Schedule</span>
 						<span class="text-2xl text-slate-800 transition-transform group-hover:translate-x-1"
 							>→</span

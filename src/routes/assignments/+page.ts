@@ -1,4 +1,5 @@
 import { error, redirect } from '@sveltejs/kit';
+import { base } from '$app/paths';
 
 export const load = async () => {
 	const modules = import.meta.glob('/src/content/assignments/*.md', { eager: true });
@@ -11,5 +12,5 @@ export const load = async () => {
 		throw error(404, 'No assignments found.');
 	}
 
-	throw redirect(307, `/assignments/${slugs[0]}`);
+	throw redirect(307, `${base}/assignments/${slugs[0]}`);
 };

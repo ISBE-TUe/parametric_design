@@ -99,3 +99,16 @@ npm run dev
 npm run build
 npm run preview
 ```
+
+## GitHub Pages Deployment
+
+Repo: `https://github.com/ISBE-TUe/parametric_design`
+
+Build with a base path that matches the repo name:
+
+```sh
+BASE_PATH=/parametric_design npm run build
+```
+
+Deploy the `build/` folder to GitHub Pages (branch or GitHub Actions).  
+All internal links are already base-aware.

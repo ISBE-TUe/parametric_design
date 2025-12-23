@@ -5,7 +5,7 @@ objectives:
   - Metrics
   - Optimization loops
   - Performance feedback
-slidesUrl: /decks/week-04/
+# slidesUrl: /decks/week-04/
 order: 1
 weekTitle: Week 4
 ---

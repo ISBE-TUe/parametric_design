@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { base } from '$app/paths';
+
 	export let data: {
 		content: typeof import('svelte').SvelteComponent;
 		metadata: {
@@ -13,12 +15,21 @@
 		session: string;
 	};
 
-	const objectives = data.metadata.objectives ?? [];
-	const slidesUrl = data.metadata.slidesUrl ?? '';
-	const pdfUrl = data.metadata.pdfUrl ?? '';
-	const description = data.metadata.description ?? '';
-	const title = data.metadata.title ?? data.session.replace(/-/g, ' ');
-	const weekTitle = data.metadata.weekTitle ?? data.week.toUpperCase();
+	const withBase = (url: string) => (url.startsWith('/') ? `${base}${url}` : url);
+
+	let objectives: string[] = [];
+	let slidesUrl = '';
+	let pdfUrl = '';
+	let description = '';
+	let title = '';
+	let weekTitle = '';
+
+	$: objectives = data.metadata.objectives ?? [];
+	$: slidesUrl = data.metadata.slidesUrl ? withBase(data.metadata.slidesUrl) : '';
+	$: pdfUrl = data.metadata.pdfUrl ? withBase(data.metadata.pdfUrl) : '';
+	$: description = data.metadata.description ?? '';
+	$: title = data.metadata.title ?? data.session.replace(/-/g, ' ');
+	$: weekTitle = data.metadata.weekTitle ?? data.week.toUpperCase();
 </script>
 
 <div class="space-y-10">
@@ -107,7 +118,7 @@
 		</div>
 		<div class="overflow-hidden rounded-xl border border-slate-200 bg-white">
 			{#if slidesUrl}
-				<iframe {title} src={slidesUrl} class="h-[520px] w-full border-0" />
+				<iframe {title} src={slidesUrl} class="h-[520px] w-full border-0"></iframe>
 			{:else}
 				<div class="flex h-[320px] items-center justify-center text-sm text-slate-400">
 					Embed your Slidev URL to preview here.

@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { page } from '$app/stores';
+	import { base } from '$app/paths';
 
 	export let data: {
 		weeks: {
@@ -25,7 +26,7 @@
 		<nav class="flex flex-wrap items-center gap-3">
 			{#each data.weeks as week}
 				<a
-					href={`/slides/${week.id}/${week.sessions[0]?.slug ?? ''}`}
+					href={`${base}/slides/${week.id}/${week.sessions[0]?.slug ?? ''}`}
 					class={`inline-flex items-center rounded-md px-4 py-2 text-xs font-semibold tracking-[0.2em] uppercase transition ${
 						currentWeek?.id === week.id
 							? 'bg-slate-900 text-white'
@@ -48,7 +49,7 @@
 					<span class="h-1 w-1 rounded-full bg-blue-500"></span>
 					{#each currentWeek.sessions as session, index}
 						<a
-							href={`/slides/${currentWeek.id}/${session.slug}`}
+							href={`${base}/slides/${currentWeek.id}/${session.slug}`}
 							class={`transition ${
 								currentSession?.slug === session.slug
 									? 'text-slate-900'

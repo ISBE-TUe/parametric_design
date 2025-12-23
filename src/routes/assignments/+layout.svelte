@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { page } from '$app/stores';
+	import { base } from '$app/paths';
 
 	export let data: {
 		assignments: { slug: string; title: string }[];
@@ -12,9 +13,9 @@
 	<nav class="flex flex-wrap gap-3 pb-6">
 		{#each data.assignments as assignment, index}
 			<a
-				href={`/assignments/${assignment.slug}`}
+				href={`${base}/assignments/${assignment.slug}`}
 				class={`inline-flex items-center gap-3 rounded-md px-4 py-2 text-sm font-semibold uppercase tracking-[0.15em] transition ${
-					currentPath === `/assignments/${assignment.slug}`
+					currentPath === `${base}/assignments/${assignment.slug}`
 						? 'bg-slate-900 text-white'
 						: 'bg-transparent text-slate-500 hover:text-slate-900'
 				}`}

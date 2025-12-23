@@ -5,7 +5,7 @@ objectives:
   - Versioning
   - Shared inputs
   - Review workflows
-slidesUrl: /decks/week-05/
+# slidesUrl: /decks/week-05/
 order: 1
 weekTitle: Week 5
 ---
