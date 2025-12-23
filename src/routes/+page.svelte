@@ -81,7 +81,7 @@
             <span class="text-2xl text-slate-800 transition-transform group-hover:translate-x-1">→</span>
           </a>
           <a
-            href="#assignments"
+            href="/assignments"
             class="group flex items-center justify-between px-6 py-8 sm:px-8"
           >
             <span class="text-xl font-semibold uppercase text-slate-900">Assignments</span>

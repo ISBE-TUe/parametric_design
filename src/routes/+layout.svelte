@@ -17,7 +17,7 @@
 		</div>
 		<div class="flex items-center gap-6 text-sm font-medium text-slate-700">
 			<a class="transition hover:text-slate-900" href="/content">Course Content</a>
-			<a class="transition hover:text-slate-900" href="#assignments">Assignments</a>
+			<a class="transition hover:text-slate-900" href="/assignments">Assignments</a>
 			<a class="transition hover:text-slate-900" href="#schedule">Schedule</a>
 			<div class="h-6 w-px bg-slate-200"></div>
 			<a
