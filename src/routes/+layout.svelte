@@ -7,8 +7,8 @@
 
 <svelte:head><link rel="icon" href={favicon} /></svelte:head>
 
-<header class="fixed inset-x-0 top-0 z-30 px-6 py-5 sm:px-10">
-	<nav class="flex items-center justify-between gap-6 rounded-full px-4 py-3">
+<header class="fixed inset-x-0 top-0 z-50 px-6 py-5 sm:px-10">
+	<nav class="flex items-center justify-between gap-6 rounded-full bg-white/95 px-4 py-3 shadow-sm backdrop-blur">
 		<div class="flex items-center gap-3">
 			<div class="flex h-10 w-10 items-center justify-center rounded-full bg-slate-900 text-sm font-semibold uppercase text-white">
 				PD
