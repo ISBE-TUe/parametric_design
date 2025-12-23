@@ -1,12 +1,9 @@
 <script lang="ts">
 	import { page } from '$app/stores';
 
-	const assignments = [
-		{ label: 'A01', title: 'Assignment 1', href: '/assignments/Assignment_1' },
-		{ label: 'A02', title: 'Assignment 2', href: '/assignments/Assignment_2' },
-		{ label: 'A03', title: 'Assignment 3', href: '/assignments/Assignment_3' },
-		{ label: 'A04', title: 'Assignment 4', href: '/assignments/Assignment_4' }
-	];
+	export let data: {
+		assignments: { slug: string; title: string }[];
+	};
 
 	$: currentPath = $page.url.pathname;
 </script>
@@ -21,16 +18,16 @@
 	</div>
 
 	<nav class="flex flex-wrap gap-3 border-b border-slate-200 pb-6">
-		{#each assignments as assignment}
+		{#each data.assignments as assignment, index}
 			<a
-				href={assignment.href}
+				href={`/assignments/${assignment.slug}`}
 				class={`inline-flex items-center gap-3 rounded-full border px-4 py-2 text-sm font-semibold uppercase tracking-[0.2em] transition ${
-					currentPath === assignment.href
+					currentPath === `/assignments/${assignment.slug}`
 						? 'border-slate-900 bg-slate-900 text-white'
 						: 'border-slate-200 bg-white text-slate-500 hover:border-slate-400 hover:text-slate-900'
 				}`}
 			>
-				<span class="text-xs">{assignment.label}</span>
+				<span class="text-xs">A{String(index + 1).padStart(2, '0')}</span>
 				<span class="normal-case tracking-normal">{assignment.title}</span>
 			</a>
 		{/each}
