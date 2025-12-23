@@ -22,11 +22,11 @@
 		<div class="flex items-center gap-6 text-sm font-medium text-slate-700">
 			<a class="transition hover:text-slate-900" href="/slides">Slides</a>
 			<a class="transition hover:text-slate-900" href="/assignments">Assignments</a>
-			<a class="transition hover:text-slate-900" href="#schedule">Schedule</a>
+			<a class="transition hover:text-slate-900" href="/schedule">Schedule</a>
 			<div class="h-6 w-px bg-slate-200"></div>
 			<a
 				class="rounded-full bg-slate-900 px-4 py-2 text-xs font-semibold tracking-[0.1em] text-white uppercase shadow-sm transition hover:-translate-y-[1px] hover:shadow-md"
-				href="https://canvas.instructure.com/">Canvas</a
+				href="https://canvas.tue.nl/">Login to Canvas</a
 			>
 		</div>
 	</nav>
@@ -36,6 +36,8 @@
 	{@render children()}
 </main>
 
-<footer class="px-6 pb-10 pt-6 text-center text-xs uppercase tracking-[0.2em] text-slate-400 sm:px-10">
+<footer
+	class="px-6 pt-6 pb-10 text-center text-xs tracking-[0.2em] text-slate-400 uppercase sm:px-10"
+>
 	Created by Ozgun Balaban
 </footer>
