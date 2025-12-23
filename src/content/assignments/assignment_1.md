@@ -34,7 +34,7 @@ The overall space-station structure (the carcass) is provided and shared with al
 
 <figure>
     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/ISS-20_Robert_Thirsk_at_the_Minus_Eighty_Degree_Laboratory_Freezer.jpg/2560px-ISS-20_Robert_Thirsk_at_the_Minus_Eighty_Degree_Laboratory_Freezer.jpg"
-         alt="Albuquerque, New Mexico">
+         alt="Interior of the space module">
     <figcaption>Note the access point to the module - (source:Wikipedia)</figcaption>
 </figure>
 
