@@ -1,6 +1,6 @@
 ---
 title: Parametric Design - Introduction
-description: Establishing the shift from representational drawing to algorithmic thinking in architectural design.
+description: Introduction to the Parametric Design Course
 objectives:
   - Course structure and expectations
   - Group assignment introduction
